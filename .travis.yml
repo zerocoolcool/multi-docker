@@ -6,7 +6,7 @@ before_install:
   - docker build -t zerocoolcool/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run zerocoolcool/react-test npm run test -- --coverage
+  - docker run zerocoolcool/react-test npm test -- --coverage
 
 after_success:
   - docker build -t zerocoolcool/multi-client ./client
