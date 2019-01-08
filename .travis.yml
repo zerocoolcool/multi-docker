@@ -9,12 +9,12 @@ script:
   - docker run zerocoolcool/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t zerocoolcool/multi-client ./client
+  - docker build -t zerocoolcool/multi-client ./client  
   - docker build -t zerocoolcool/multi-nginx ./nginx
   - docker build -t zerocoolcool/multi-server ./server
   - docker build -t zerocoolcool/multi-worker ./worker
 
-#login to docker
+#login to docker hub
 
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
