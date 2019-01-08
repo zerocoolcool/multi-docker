@@ -16,9 +16,8 @@ after_success:
 
 #login to docker hub
 
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
-- docker push zerocoolcool/multi-client
-- docker push zerocoolcool/multi-nginx
-- docker push zerocoolcool/multi-server
-- docker push zerocoolcool/multi-worker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push zerocoolcool/multi-client
+  - docker push zerocoolcool/multi-nginx
+  - docker push zerocoolcool/multi-server
+  - docker push zerocoolcool/multi-worker
